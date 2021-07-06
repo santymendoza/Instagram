@@ -6,6 +6,9 @@
 //
 
 #import "HomeViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface HomeViewController ()
 
@@ -16,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)logOutPressed:(id)sender {
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [[UIApplication sharedApplication].keyWindow setRootViewController: loginViewController];
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
 }
 
 /*
