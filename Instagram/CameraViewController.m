@@ -7,6 +7,7 @@
 
 #import "CameraViewController.h"
 #import "Post.h"
+#import "HomeViewController.h"
 
 @interface CameraViewController ()<UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
@@ -61,8 +62,10 @@
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    //close compose tab
-    [self dismissViewControllerAnimated:true completion:nil];
+    self.tabBarController.selectedViewController
+        = [self.tabBarController.viewControllers objectAtIndex:0];
+    self.captionField.text = @"";
+    self.selectedImage = nil;
 }
 - (IBAction)postButtonPressed:(id)sender {
     [Post postUserImage:self.selectedImage withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
@@ -73,6 +76,12 @@
             NSLog(@"did not post image!");
         }
     }];
+    //self.tabBarController.selectedViewController = myViewController;
+    self.tabBarController.selectedViewController
+        = [self.tabBarController.viewControllers objectAtIndex:0];
+    self.captionField.text = @"";
+    self.selectedImage = nil;
+    
 
 }
 
