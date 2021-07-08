@@ -11,10 +11,12 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "PostCell.h"
+#import "postDetailsViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (strong,nonatomic) NSArray *arrayOfPosts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -24,9 +26,16 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+     self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget: self action:@selector(getData) forControlEvents: UIControlEventValueChanged];
+    [self.tableView  insertSubview:self.refreshControl atIndex:0];
+    
     [self getData];
     // Do any additional setup after loading the view.
 }
+
+
+
 - (IBAction)logOutPressed:(id)sender {
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -37,11 +46,17 @@
     }];
 }
 
+
+
+
+
+
 - (void) getData {
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+//    [postQuery includeKey:@"createdAt"];
     postQuery.limit = 20;
 
     // fetch data asynchronously
@@ -49,6 +64,7 @@
         if (posts) {
             self.arrayOfPosts = posts;
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else {
             // handle error
@@ -66,45 +82,25 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     
     Post *post = self.arrayOfPosts[indexPath.row];
-    cell.photoImageView = post[@"image"];
     
-    
-    
-//    cell.name.text = tweet.user.name;
-//    cell.userName.text = tweet.user.screenName;
-//
-//    cell.date.text = tweet.createdAtString;
-//
-//
-//    cell.tweetText.text = tweet.text;
-//    cell.tweet = tweet;
-//    NSString *countString = [NSString stringWithFormat: @"%d", tweet.favoriteCount];
-//    [cell.favoritedButton setTitle:countString forState:UIControlStateNormal];
-//    countString = [NSString stringWithFormat: @"%d", tweet.retweetCount];
-//    [cell.retweetButton setTitle:countString forState:UIControlStateNormal];
-//
-//    NSString *URLString = tweet.user.profilePicture;
-//    URLString = [URLString
-//           stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
-//    NSURL *url = [NSURL URLWithString:URLString];
-//
-//    cell.profilePicture.image = nil;
-//    [cell.profilePicture setImageWithURL: url];
-    
-    
-    
+    [cell setPost:post];
     return cell;
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+//#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        
+        UITableView *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: tappedCell];
+        Post *tappedPost = self.arrayOfPosts[indexPath.row];
+        
+        postDetailsViewController *detailViewController = [segue destinationViewController];
+        detailViewController.post = tappedPost;
+    
 }
-*/
-
 @end

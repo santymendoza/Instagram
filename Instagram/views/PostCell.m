@@ -11,6 +11,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    //self.photoImageView.image = image_placeHolder;
     // Initialization code
 }
 
@@ -23,6 +24,7 @@
 - (void)setPost:(Post *)post {
     _post = post;
     self.photoImageView.file = post[@"image"];
+    self.captionLabel.text = post[@"caption"];
     [self.photoImageView loadInBackground];
 }
 

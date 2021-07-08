@@ -15,6 +15,7 @@
 		F92A794626960BA300DF45A6 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92A794526960BA300DF45A6 /* CameraViewController.m */; };
 		F92A794C26961BB500DF45A6 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = F92A794B26961BB500DF45A6 /* Post.m */; };
 		F92A794F26965B9300DF45A6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92A794E26965B9300DF45A6 /* PostCell.m */; };
+		F92A795726979B4200DF45A6 /* postDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92A795626979B4200DF45A6 /* postDetailsViewController.m */; };
 		F93D209D2694EB3400BDAF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D209C2694EB3400BDAF44 /* AppDelegate.m */; };
 		F93D20A02694EB3400BDAF44 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F93D209F2694EB3400BDAF44 /* SceneDelegate.m */; };
 		F93D20A62694EB3400BDAF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93D20A42694EB3400BDAF44 /* Main.storyboard */; };
@@ -61,6 +62,8 @@
 		F92A794B26961BB500DF45A6 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		F92A794D26965B9300DF45A6 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		F92A794E26965B9300DF45A6 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		F92A795526979B4200DF45A6 /* postDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = postDetailsViewController.h; sourceTree = "<group>"; };
+		F92A795626979B4200DF45A6 /* postDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = postDetailsViewController.m; sourceTree = "<group>"; };
 		F93D20982694EB3400BDAF44 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93D209B2694EB3400BDAF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F93D209C2694EB3400BDAF44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -131,6 +134,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F92A795826979E3100DF45A6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F92A793E2694F58F00DF45A6 /* LoginViewController.h */,
+				F92A793F2694F58F00DF45A6 /* LoginViewController.m */,
+				F92A795526979B4200DF45A6 /* postDetailsViewController.h */,
+				F92A795626979B4200DF45A6 /* postDetailsViewController.m */,
+				F92A794426960BA300DF45A6 /* CameraViewController.h */,
+				F92A794526960BA300DF45A6 /* CameraViewController.m */,
+				F92A79412694FCDB00DF45A6 /* HomeViewController.h */,
+				F92A79422694FCDB00DF45A6 /* HomeViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F92A795926979E6A00DF45A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F92A794B26961BB500DF45A6 /* Post.m */,
+				F92A794A26961BB500DF45A6 /* Post.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F92A795A26979E7600DF45A6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F92A794D26965B9300DF45A6 /* PostCell.h */,
+				F92A794E26965B9300DF45A6 /* PostCell.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		F93D208F2694EB3400BDAF44 = {
 			isa = PBXGroup;
 			children = (
@@ -161,16 +197,9 @@
 				F93D209E2694EB3400BDAF44 /* SceneDelegate.h */,
 				F93D209F2694EB3400BDAF44 /* SceneDelegate.m */,
 				F93D20A42694EB3400BDAF44 /* Main.storyboard */,
-				F92A794426960BA300DF45A6 /* CameraViewController.h */,
-				F92A794526960BA300DF45A6 /* CameraViewController.m */,
-				F92A79412694FCDB00DF45A6 /* HomeViewController.h */,
-				F92A79422694FCDB00DF45A6 /* HomeViewController.m */,
-				F92A794D26965B9300DF45A6 /* PostCell.h */,
-				F92A794E26965B9300DF45A6 /* PostCell.m */,
-				F92A794A26961BB500DF45A6 /* Post.h */,
-				F92A794B26961BB500DF45A6 /* Post.m */,
-				F92A793E2694F58F00DF45A6 /* LoginViewController.h */,
-				F92A793F2694F58F00DF45A6 /* LoginViewController.m */,
+				F92A795826979E3100DF45A6 /* View Controllers */,
+				F92A795A26979E7600DF45A6 /* views */,
+				F92A795926979E6A00DF45A6 /* Models */,
 				F93D20A72694EB3500BDAF44 /* Assets.xcassets */,
 				F93D20A92694EB3500BDAF44 /* LaunchScreen.storyboard */,
 				F93D20AC2694EB3500BDAF44 /* Info.plist */,
@@ -438,6 +467,7 @@
 				F93D209D2694EB3400BDAF44 /* AppDelegate.m in Sources */,
 				F93D20AE2694EB3500BDAF44 /* main.m in Sources */,
 				F92A794F26965B9300DF45A6 /* PostCell.m in Sources */,
+				F92A795726979B4200DF45A6 /* postDetailsViewController.m in Sources */,
 				F92A794626960BA300DF45A6 /* CameraViewController.m in Sources */,
 				F92A79432694FCDB00DF45A6 /* HomeViewController.m in Sources */,
 				F93D20A02694EB3400BDAF44 /* SceneDelegate.m in Sources */,

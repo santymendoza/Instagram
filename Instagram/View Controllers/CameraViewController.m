@@ -52,7 +52,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
-    self.selectedImage = originalImage;
+    self.selectedImage = [self resizeImage:originalImage withSize:CGSizeMake(200.0, 200.0)];
     self.postImage.image  = originalImage;
     //    [Post postUserImage:originalImage withCaption:self.captionField.text withCompletion:nil];
     
@@ -61,11 +61,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+
+
 - (IBAction)cancelButtonPressed:(id)sender {
     self.tabBarController.selectedViewController
         = [self.tabBarController.viewControllers objectAtIndex:0];
     self.captionField.text = @"";
-    self.selectedImage = nil;
+    self.postImage = nil;
 }
 - (IBAction)postButtonPressed:(id)sender {
     [Post postUserImage:self.selectedImage withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
@@ -80,7 +97,7 @@
     self.tabBarController.selectedViewController
         = [self.tabBarController.viewControllers objectAtIndex:0];
     self.captionField.text = @"";
-    self.selectedImage = nil;
+    self.postImage = nil;
     
 
 }
