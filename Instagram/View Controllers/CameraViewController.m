@@ -96,7 +96,7 @@
     //self.tabBarController.selectedViewController = myViewController;
     self.tabBarController.selectedViewController
         = [self.tabBarController.viewControllers objectAtIndex:0];
-    self.captionField.text = @"";
+    self.captionField.text = @"Post caption here";
     self.postImage = nil;
     
 

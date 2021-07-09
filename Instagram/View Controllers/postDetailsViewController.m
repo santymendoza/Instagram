@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
@@ -28,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.captionLabel.text = self.post.caption;
+    self.userNameLabel.text = self.post.author[@"username"];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     self.timeLabel.text = [formatter stringFromDate:self.post.createdAt];

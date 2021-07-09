@@ -12,6 +12,7 @@
 @dynamic userID;
 @dynamic author;
 @dynamic caption;
+@dynamic likers;
 @dynamic image;
 @dynamic createdAt;
 @dynamic likeCount;
@@ -27,12 +28,13 @@
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
-    //newPost.createdAt = ;
+    newPost.likers = [NSMutableArray new];
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
     [newPost saveInBackgroundWithBlock: completion];
 }
+
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
  

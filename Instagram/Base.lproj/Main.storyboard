@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5s-ia-XHf">
-                                <rect key="frame" x="152" y="163" width="111" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-k0-hHd">
                                 <rect key="frame" x="94" y="248" width="249" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,6 +46,17 @@
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1yG-uy-6PE"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="instagram" translatesAutoresizingMaskIntoConstraints="NO" id="c9Z-Wh-8Au">
+                                <rect key="frame" x="-46" y="-3" width="513" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5s-ia-XHf">
+                                <rect key="frame" x="169" y="180" width="81" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="-40"/>
+            <point key="canvasLocation" x="-830.43478260869574" y="-40.178571428571423"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="fzo-xM-gSx">
@@ -80,12 +84,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a caption" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kjf-wT-Lex">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjf-wT-Lex">
                                 <rect key="frame" x="87" y="305" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Add a caption">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="14" name="AmericanTypewriter"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywt-I3-nZd">
@@ -162,7 +173,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SantyMendoza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eei-aj-HMG">
                                                     <rect key="frame" x="90" y="21" width="114" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -172,19 +183,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGt-iu-f3x">
+                                                    <rect key="frame" x="5" y="373" width="73" height="22"/>
+                                                    <state key="normal" title="0 likes" image="suit.heart" catalog="system">
+                                                        <color key="titleColor" systemColor="linkColor"/>
+                                                    </state>
+                                                    <state key="selected" image="heart.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="likeButtonClicked:" destination="Pc8-0z-0xo" eventType="touchUpInside" id="CsC-Js-kCe"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fBx-eO-0Uu" firstAttribute="leading" secondItem="Rig-wC-X4h" secondAttribute="leading" id="1TW-M3-JwN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="eei-aj-HMG" secondAttribute="trailing" constant="190" id="69y-Ca-eK0"/>
                                                 <constraint firstItem="fBx-eO-0Uu" firstAttribute="top" secondItem="eei-aj-HMG" secondAttribute="bottom" constant="40" id="8WX-OJ-d8B"/>
                                                 <constraint firstAttribute="trailing" secondItem="fBx-eO-0Uu" secondAttribute="trailing" id="ARV-9t-eLh"/>
+                                                <constraint firstItem="eGt-iu-f3x" firstAttribute="leading" secondItem="Rig-wC-X4h" secondAttribute="leading" constant="5" id="FVI-1F-CKL"/>
+                                                <constraint firstItem="eGt-iu-f3x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ctq-5T-z6T" secondAttribute="bottom" constant="41" id="Faa-Jn-kgL"/>
                                                 <constraint firstItem="eei-aj-HMG" firstAttribute="top" secondItem="Rig-wC-X4h" secondAttribute="topMargin" constant="10" id="G11-1C-b11"/>
                                                 <constraint firstItem="ctq-5T-z6T" firstAttribute="leading" secondItem="Rig-wC-X4h" secondAttribute="leadingMargin" constant="5" id="GeD-lR-T13"/>
+                                                <constraint firstAttribute="bottom" secondItem="eGt-iu-f3x" secondAttribute="bottom" constant="5" id="K90-bG-F0l"/>
                                                 <constraint firstItem="xGi-Tt-ati" firstAttribute="top" secondItem="Rig-wC-X4h" secondAttribute="topMargin" constant="5" id="Yrt-Co-UbV"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fBx-eO-0Uu" secondAttribute="bottom" constant="75" id="e9d-HF-OtD"/>
                                                 <constraint firstItem="ctq-5T-z6T" firstAttribute="top" secondItem="fBx-eO-0Uu" secondAttribute="bottom" constant="20" id="fPs-YC-ZD0"/>
                                                 <constraint firstItem="eei-aj-HMG" firstAttribute="leading" secondItem="xGi-Tt-ati" secondAttribute="trailing" constant="15" id="g8j-u4-LSb"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ctq-5T-z6T" secondAttribute="bottom" constant="15" id="loU-n7-BA1"/>
                                                 <constraint firstItem="ctq-5T-z6T" firstAttribute="trailing" secondItem="Rig-wC-X4h" secondAttribute="trailingMargin" constant="5" id="qBS-aC-PH9"/>
                                                 <constraint firstItem="xGi-Tt-ati" firstAttribute="leading" secondItem="Rig-wC-X4h" secondAttribute="leadingMargin" constant="5" id="zAU-K5-jN5"/>
                                             </constraints>
@@ -192,7 +215,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="ctq-5T-z6T" id="5K4-ZY-4o6"/>
+                                            <outlet property="likeButton" destination="eGt-iu-f3x" id="965-gM-4Ws"/>
                                             <outlet property="photoImageView" destination="fBx-eO-0Uu" id="tM7-R9-Gn5"/>
+                                            <outlet property="usernameLabel" destination="eei-aj-HMG" id="Tp6-Pn-2PG"/>
                                             <segue destination="Tnw-dF-pDP" kind="show" identifier="detailsSegue" id="iM1-2p-G4f"/>
                                         </connections>
                                     </tableViewCell>
@@ -230,7 +255,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Y9-Q6-WPg" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="5" width="414" height="300"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="mkW-iQ-N2Z"/>
                                 </constraints>
@@ -244,6 +269,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-me-qQi">
                                 <rect key="frame" x="367" y="310" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-Po-0Dk">
+                                <rect key="frame" x="32" y="310" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -268,11 +300,12 @@
                         <outlet property="captionLabel" destination="1qB-tk-uiQ" id="1ZV-62-vCf"/>
                         <outlet property="postImage" destination="1Y9-Q6-WPg" id="Pz8-Dg-WdU"/>
                         <outlet property="timeLabel" destination="D4p-me-qQi" id="VHS-hK-UWi"/>
+                        <outlet property="userNameLabel" destination="W9r-Po-0Dk" id="4CD-MK-7Rk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnH-Qk-yDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="-619"/>
+            <point key="canvasLocation" x="2640.579710144928" y="-619.41964285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4c3-gf-Sx2">
@@ -296,9 +329,15 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="instagram" width="1366" height="768"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -306,11 +345,11 @@
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
